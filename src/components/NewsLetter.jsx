@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Send } from "@material-ui/icons";
 
+import { mobile } from "../responsive";
+
+
 const Container = styled.div`
 	height: 60vh;
 	background-color: #fcf5f5;
@@ -18,7 +21,8 @@ const Title = styled.h1`
 const Description = styled.p`
 	font-size: 24px;
 	font-weight: 300;
-	margin-bottom: 20px; ;
+	margin-bottom: 20px;
+	${mobile({ textAlign: "center" })}
 `;
 
 const InputContainer = styled.div`
@@ -28,6 +32,7 @@ const InputContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	border: 1px solid lightgray;
+	${mobile({ width: "80%" })}
 `;
 
 const Input = styled.input`
@@ -41,7 +46,7 @@ const Button = styled.button`
 	border: none;
 	background-color: teal;
 	color: white;
-	cursor:pointer;
+	cursor: pointer;
 `;
 
 const NewsLetter = () => {
@@ -50,8 +55,10 @@ const NewsLetter = () => {
 			<Title>Newsletter</Title>
 			<Description>Get Timely updates from your favorite products</Description>
 			<InputContainer>
-				<Input placeholder="Email" type='email' />
-				<Button><Send/></Button>
+				<Input placeholder="Email" type="email" />
+				<Button>
+					<Send />
+				</Button>
 			</InputContainer>
 		</Container>
 	);
