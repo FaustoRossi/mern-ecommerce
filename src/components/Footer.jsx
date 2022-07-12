@@ -12,7 +12,7 @@ import {
 
 const Container = styled.div`
 	display: flex;
-	${mobile({ flexDirection: "column" })}
+	${mobile({ flexDirection: "column", textAlign: "center" })}
 `;
 const Left = styled.div`
 	flex: 1;
@@ -65,7 +65,13 @@ const ListItem = styled.li`
 `;
 const Right = styled.div`
 	flex: 1;
-	${mobile({ backgroundColor: "#fff8f8" })}
+	${mobile({
+		backgroundColor: "#fff8f8",
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		flexDirection: "column",
+		})}
 `;
 const ContactItem = styled.div`
 	margin-bottom: 20px;
