@@ -4,6 +4,9 @@ import {
 	SearchOutlined,
 	FavoriteBorderOutlined,
 } from "@material-ui/icons";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { publicRequest } from "../requestMethods";
 
 const Info = styled.div`
 	opacity: 0;
@@ -30,10 +33,10 @@ const Container = styled.div`
 	justify-content: center;
 	background-color: #f5fbfd;
 	position: relative;
-    
-     &:hover ${Info}{
-    opacity: 1;
-  }
+
+	&:hover ${Info} {
+		opacity: 1;
+	}
 `;
 
 const Circle = styled.div`
@@ -48,8 +51,6 @@ const Image = styled.img`
 	height: 75%;
 	z-index: 2;
 `;
-
-
 
 const Icon = styled.div`
   width: 40px;
@@ -71,12 +72,14 @@ const ProductItem = ({ item }) => {
 		<Container>
 			<Circle />
 			<Image src={item.img} />
-			<Info >
+			<Info>
 				<Icon>
 					<ShoppingCartOutlined />
 				</Icon>
 				<Icon>
-					<SearchOutlined />
+					<Link to={`/product/${item._id}`}>
+						<SearchOutlined />
+					</Link>
 				</Icon>
 				<Icon>
 					<FavoriteBorderOutlined />
